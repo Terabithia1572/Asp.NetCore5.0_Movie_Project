@@ -13,5 +13,6 @@ namespace DataAccessLayer.Concrete
         {
             dbContextOptionsBuilder.UseSqlServer("server=.;database=MovieDB;integrated security=true");
         }
+        
     }
 }
