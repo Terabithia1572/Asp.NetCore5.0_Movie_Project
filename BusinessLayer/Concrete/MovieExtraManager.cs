@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace BusinessLayer.Concrete
 {
     public class MovieExtraManager : IMovieExtraService
     {
+        IMovieExtraDal _movieExtraDal;
+
+        public MovieExtraManager(IMovieExtraDal movieExtraDal)
+        {
+            _movieExtraDal = movieExtraDal;
+        }
+
         public List<MovieExtra> GetList()
         {
-            throw new NotImplementedException();
+            return _movieExtraDal.GetListAll();
         }
 
         public void TAdd(MovieExtra t)
         {
-            throw new NotImplementedException();
+            _movieExtraDal.Insert(t);
         }
 
         public void TDelete(MovieExtra t)
         {
-            throw new NotImplementedException();
+            _movieExtraDal.Delete(t);
         }
 
         public MovieExtra TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _movieExtraDal.GetByID(id);
         }
 
         public void TUpdate(MovieExtra t)
         {
-            throw new NotImplementedException();
+            _movieExtraDal.Update(t);
         }
     }
 }
