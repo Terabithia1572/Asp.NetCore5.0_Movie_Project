@@ -25,7 +25,7 @@ namespace BusinessLayer.Concrete
 
         public List<Movie> GetMovieListWithMovieExtra()
         {
-            throw new NotImplementedException();
+            return _movieDal.GetListWithMovieExtra();
         }
 
         public List<Movie> GetList()
