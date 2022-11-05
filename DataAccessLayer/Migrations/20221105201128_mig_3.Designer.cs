@@ -4,14 +4,16 @@ using DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20221105201128_mig_3")]
+    partial class mig_3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -182,17 +184,11 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryID")
-                        .HasColumnType("int");
-
                     b.Property<string>("MovieCountry")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MovieDescription")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MovieExtraID")
-                        .HasColumnType("int");
 
                     b.Property<string>("MovieImage")
                         .HasColumnType("nvarchar(max)");
@@ -200,8 +196,8 @@ namespace DataAccessLayer.Migrations
                     b.Property<DateTime>("MovieReleaseDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("MovieStars")
-                        .HasColumnType("float");
+                    b.Property<int>("MovieStars")
+                        .HasColumnType("int");
 
                     b.Property<bool>("MovieStatus")
                         .HasColumnType("bit");
@@ -219,10 +215,6 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MovieID");
-
-                    b.HasIndex("CategoryID");
-
-                    b.HasIndex("MovieExtraID");
 
                     b.ToTable("Movies");
                 });
@@ -246,35 +238,6 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("MovieExtraID");
 
                     b.ToTable("MovieExtras");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Movie", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.Category", "Category")
-                        .WithMany("Movies")
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EntityLayer.Concrete.MovieExtra", "MovieExtra")
-                        .WithMany("Movies")
-                        .HasForeignKey("MovieExtraID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-
-                    b.Navigation("MovieExtra");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
-                {
-                    b.Navigation("Movies");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.MovieExtra", b =>
-                {
-                    b.Navigation("Movies");
                 });
 #pragma warning restore 612, 618
         }

@@ -14,5 +14,6 @@ namespace EntityLayer.Concrete
         public string MovieQuality { get; set; }
         public int MovieAge { get; set; }
         public bool MovieExtraStatus { get; set; }
+        public List<Movie> Movies { get; set; }
     }
 }

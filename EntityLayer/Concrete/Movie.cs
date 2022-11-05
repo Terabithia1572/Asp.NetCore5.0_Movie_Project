@@ -18,8 +18,14 @@ namespace EntityLayer.Concrete
         public DateTime MovieTime { get; set; }
         public string MovieCountry { get; set; }
         public string MovieTrailer { get; set; }
-        public int MovieStars { get; set; }
+        public string MovieTabIndex { get; set; }
+        public double MovieStars { get; set; }
         public bool MovieStatus { get; set; }
+        public int MovieExtraID { get; set; }
+        public MovieExtra MovieExtra { get; set; }
+        public int CategoryID { get; set; } //ilişkili tabloda
+        //ilişkili tabloda tutulacak ID
+        public Category Category { get; set; }
 
     }
 }
