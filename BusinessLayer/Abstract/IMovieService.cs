@@ -9,5 +9,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IMovieService:IGenericService<Movie>
     {
+        List<Movie> GetMovieListWithCategory();
+        List<Movie> GetMovieListWithMovieExtra();
     }
 }

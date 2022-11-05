@@ -9,5 +9,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface IMovieDal:IGenericDal<Movie>
     {
+        List<Movie> GetListWithCategory();
+        List<Movie> GetListWithMovieExtra();
     }
 }

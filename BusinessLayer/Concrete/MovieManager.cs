@@ -18,6 +18,16 @@ namespace BusinessLayer.Concrete
             _movieDal = movieDal;
         }
 
+        public List<Movie> GetMovieListWithCategory()
+        {
+            return _movieDal.GetListWithCategory();
+        }
+
+        public List<Movie> GetMovieListWithMovieExtra()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Movie> GetList()
         {
             return _movieDal.GetListAll();
