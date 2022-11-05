@@ -13,8 +13,9 @@ namespace EntityLayer.Concrete
         public int MovieID { get; set; }
         public string MovieTitle { get; set; }
         public string MovieDescription { get; set; }
+        public string MovieImage { get; set; }
         public DateTime MovieReleaseDate { get; set; }
-        public int MovieTime { get; set; }
+        public DateTime MovieTime { get; set; }
         public string MovieCountry { get; set; }
         public string MovieTrailer { get; set; }
         public int MovieStars { get; set; }
