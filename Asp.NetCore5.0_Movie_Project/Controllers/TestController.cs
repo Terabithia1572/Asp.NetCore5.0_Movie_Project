@@ -12,5 +12,13 @@ namespace Asp.NetCore5._0_Movie_Project.Controllers
         {
             return View();
         }
+        public PartialViewResult PartialFooter()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialPartners()
+        {
+            return PartialView();
+        }
     }
 }
