@@ -87,14 +87,14 @@
                                     </a>
 
                                     <ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuMore">
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="profile.html">Profile</a></li>
-                                        <li><a href="signin.html">Giriş Yap</a></li>
-                                        <li><a href="signup.html">Sign Up</a></li>
-                                        <li><a href="forgot.html">Forgot password</a></li>
-                                        <li><a href="privacy.html">Privacy Policy</a></li>
-                                        <li><a href="contacts.html">Contacts</a></li>
-                                        <li><a href="404.html">404 Page</a></li>
+                                        <li><a href="/About/Index/">Hakkımızda</a></li>
+                                        <li><a href="/Profile/Index/">Profilim</a></li>
+                                        <li><a href="/Login/Index/">Giriş Yap</a></li>
+                                        <li><a href="/Register/Index/">Kayıt Ol</a></li>
+                                        <li><a href="#">Şifremi Unuttum ?</a></li>
+                                        <li><a href="/Privacy/Index/">Gizlilik Politikaları</a></li>
+                                        <li><a href="/Contact/Index/">İletişim</a></li>
+
                                     </ul>
                                 </li>
                                 <!-- end dropdown -->
@@ -156,20 +156,20 @@
     <!-- home -->
     @RenderBody()
 
-    @await Component.InvokeAsync("NewFilmsNewSeason")  
+    @await Component.InvokeAsync("NewFilmsNewSeason")
     <!-- end home -->
     <!-- content -->
 
-    @await Component.InvokeAsync("NewFilms") 
+    @await Component.InvokeAsync("NewFilms")
     <!-- end content -->
     <!-- expected premiere -->
-    @await Component.InvokeAsync("RecommendFilms") 
+    @await Component.InvokeAsync("RecommendFilms")
     <!-- end expected premiere -->
     <!-- partners -->
-    @await Html.PartialAsync("PartialPartners") 
+    @await Html.PartialAsync("PartialPartners")
     <!-- end partners -->
     <!-- footer -->
-    @await Html.PartialAsync("PartialFooter") 
+    @await Html.PartialAsync("PartialFooter")
     <!-- end footer -->
     <!-- JS -->
     <script src="~/FlixGo/js/bootstrap.bundle.min.js"></script>
