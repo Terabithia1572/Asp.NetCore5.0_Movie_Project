@@ -11,7 +11,7 @@ namespace Asp.NetCore5._0_Movie_Project.ViewComponents
 {  
     public class NewFilmsNewSeason:ViewComponent
     {
-        MovieManager movieManager = new MovieManager(new EfMovieRepository());
+        MovieManager movieManager = new MovieManager(new EfMovieRepository()); //nesne oluşturduk
 
         public IViewComponentResult Invoke()
         {
